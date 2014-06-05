@@ -795,7 +795,7 @@ function setLegend() {
 	}
 	labels.push('<br />');
 	labels.push('<div class="row">');
-	labels.push('	<div class="col-md-12" id="legendTable">');
+	labels.push('	<div class="col-md-11" id="legendTable">');
 	labels.push('		<table><tr>');
 
 	for (var i = 0; i < grades.length; i++) {
@@ -820,7 +820,7 @@ function setLegend() {
 	labels.push('	<div class="col-md-2 start">');
 	labels.push('		Low');
 	labels.push('	</div>');
-	labels.push('	<div class="col-md-2 col-md-offset-8 end">');
+	labels.push('	<div class="col-md-2 col-md-offset-7 end">');
 	labels.push('		High');
 	labels.push('	</div>');
 	labels.push('</div>');
@@ -836,3 +836,27 @@ function loadData() {
 	readQueryString(queryStringResult)
 	setUpData();
 }
+
+var hidden = false;
+
+$('#filter-container-toggle').click(function() {
+	if (hidden){
+		$('#filter-container').animate({
+			left: "2%"
+		}, 500, function() {
+			$('#filter-container').css('left', '2%');
+			$('#filter-container-toggle').addClass('glyphicon-chevron-left').removeClass('glyphicon-chevron-right');
+			$('#filter-container').appendTo('#container');
+		});
+		hidden = false;
+	} else {
+		$('#filter-container').animate({
+			left: '-360px'
+		}, 500, function() {
+			$('#filter-container').css('left', '-360px');
+			$('#filter-container-toggle').addClass('glyphicon-chevron-right').removeClass('glyphicon-chevron-left');
+			$('#filter-container').appendTo('#container');
+		});
+		hidden = true;
+	}
+});

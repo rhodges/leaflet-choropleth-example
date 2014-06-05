@@ -21,45 +21,53 @@
 
 </head>
 <body>
-	<div id="filter-container" class="well">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 id="title">Agricultural Zone Viewer</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<p>Viewing the West's agriculture by zone.</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-2">
-						Measure:
-					</div>
-					<div class="col-md-10">
-						<form id="measureSelect">
-						</form>
-					</div>
+	<div id="container">
+		<div id="filter-container" class="well">
+			<div class="row">
+				<div class="col-md-12">
+					<span id="filter-container-toggle" class="glyphicon glyphicon-chevron-left pull-right">
+					</span>
 				</div>
-				<form id="selectors">
+			</div>
+			<div class="row">
+				<div class="col-md-11">
+					<h2 id="title">Agricultural Zone Viewer</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-11">
+					<p>Viewing the West's agriculture by zone.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-11">
 					<div class="row">
 						<div class="col-md-2">
-							Crop:
+							Measure:
 						</div>
 						<div class="col-md-10">
-							<select id="typeSelect" onchange="selectCrop(this.value)">
-							</select>
+							<form id="measureSelect">
+							</form>
 						</div>
 					</div>
-				</form>
+					<form id="selectors">
+						<div class="row">
+							<div class="col-md-2">
+								Crop:
+							</div>
+							<div class="col-md-10">
+								<select id="typeSelect" onchange="selectCrop(this.value)">
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
-	
+		
 
-	<div id="map"></div>
+		<div id="map"></div>
+	</div>
 
 	<script src="../dist/leaflet.js"></script>
 	<script src="../dist/simple_statistics.js"></script>
